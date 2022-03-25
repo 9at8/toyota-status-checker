@@ -1,0 +1,53 @@
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: ./tsconfig.json
+
+root: true
+
+plugins:
+  - '@typescript-eslint'
+  - prettier
+
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:import/typescript
+  - prettier
+  - plugin:prettier/recommended
+
+rules:
+  quotes:
+    - error
+    - single
+    - avoidEscape: true
+
+  no-console: warn
+
+  '@typescript-eslint/explicit-member-accessibility':
+    - error
+    - accessibility: no-public
+
+  import/first: warn
+  import/order:
+    - warn
+    - newlines-between: always
+      alphabetize:
+        order: asc
+        caseInsensitive: true
+
+  import/no-duplicates: off
+  no-duplicate-imports: off
+  '@typescript-eslint/no-duplicate-imports': warn
+
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/explicit-module-boundary-types': off
+  '@typescript-eslint/no-explicit-any': off
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/no-use-before-define': off
+
+  # Enabled in tsconfig
+  '@typescript-eslint/no-unused-vars': off
+  import/no-unresolved: off
