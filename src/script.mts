@@ -52,7 +52,7 @@ async function main() {
   const api = JSON.parse(response) as API
   const clientData: Data = {
     status: dealerCategoryTable[api.dealerCategory],
-    lastUpdate: new Date().toDateString(),
+    lastUpdate: new Date().toString(),
   }
 
   if (api.eta != null) {
